@@ -1,5 +1,5 @@
 import "./Hero.css";
-
+import developerImg from "../../assets/images/developer.png";
 function Hero() {
   return (
     <section className="hero" id="home" data-aos="fade-down">
@@ -19,7 +19,7 @@ function Hero() {
           </div>
         </div>
         <div className="hero-image">
-          <img src="https://i.ibb.co/7W9Qf7R/developer.png" alt="Hussain Developer" />
+          <img src={developerImg} alt="Hussain" />
         </div>
       </div>
     </section>

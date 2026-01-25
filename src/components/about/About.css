@@ -6,71 +6,77 @@
 .about-container {
   max-width: var(--container-width);
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .about h2 {
   font-size: 2.5rem;
   text-align: center;
   color: var(--secondary-color);
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
+/* Centered layout */
 .about-content {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
+  text-align: center;
+  gap: 30px;
 }
 
-.about-image,
+/* Animation */
 .about-text {
+  max-width: 700px;
+  margin: 0 auto;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 1s ease, transform 1s ease;
 }
 
-[data-aos="fade-up"] .about-image,
 [data-aos="fade-up"] .about-text {
   opacity: 1;
   transform: translateY(0);
 }
 
-.about-image img {
-  width: 300px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.about-text {
-  max-width: 600px;
-}
-
 .about-text p {
   margin-bottom: 20px;
   color: var(--text-color);
-  line-height: 1.7;
+  line-height: 1.8;
+  font-size: 1.05rem;
 }
 
+/* Skills badges */
 .about-skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
 }
 
 .about-skills span {
   background: linear-gradient(135deg, #3b82f6, #60a5fa);
   color: #fff;
-  padding: 5px 15px;
+  padding: 6px 18px;
   border-radius: var(--border-radius);
   font-size: 0.9rem;
+  font-weight: 500;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.about-skills span:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .about-content {
-    flex-direction: column;
-    text-align: center;
+  .about h2 {
+    font-size: 2rem;
   }
-  .about-image img {
-    width: 250px;
+
+  .about-text {
+    font-size: 1rem;
   }
 }
