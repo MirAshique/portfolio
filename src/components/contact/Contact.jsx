@@ -15,10 +15,37 @@ function Contact() {
         </form>
 
         <div className="social-links">
-          <a href="#" target="_blank">LinkedIn</a>
-          <a href="#" target="_blank">GitHub</a>
-          <a href="#" target="_blank">Fiverr</a>
-          <a href="#" target="_blank">Upwork</a>
+          <a
+    href="https://github.com/MirAshique"
+    target="_blank"
+    rel="noreferrer"
+  >
+    GitHub
+  </a>
+
+  <a
+    href="https://www.linkedin.com"
+    target="_blank"
+    rel="noreferrer"
+  >
+    LinkedIn
+  </a>
+
+  <a
+    href="https://www.fiverr.com"
+    target="_blank"
+    rel="noreferrer"
+  >
+    Fiverr
+  </a>
+
+  <a
+    href="https://www.upwork.com"
+    target="_blank"
+    rel="noreferrer"
+  >
+    Upwork
+  </a>
         </div>
       </div>
     </section>
