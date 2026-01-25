@@ -1,0 +1,20 @@
+:root {
+  /* Colors */
+  --primary-color: #2563eb;
+  --secondary-color: #0f172a;
+  --text-color: #334155;
+  --light-text: #64748b;
+  --background-color: #f8fafc;
+  --white-color: #ffffff;
+
+  /* Fonts */
+  --font-family: 'Inter', system-ui, Arial, sans-serif;
+
+  /* Spacing */
+  --section-padding: 80px;
+  --container-width: 1200px;
+
+  /* Effects */
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+}
