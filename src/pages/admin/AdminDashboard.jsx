@@ -6,9 +6,9 @@ const API_URL = process.env.REACT_APP_API_URL;
 function AdminDashboard() {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
   const [page, setPage] = useState(1);
   const [pages, setPages] = useState(1);
+  const [darkMode, setDarkMode] = useState(false);
 
   const token = localStorage.getItem("adminToken");
 
@@ -19,60 +19,31 @@ function AdminDashboard() {
     }
 
     const fetchMessages = async () => {
-      try {
-        const res = await fetch(
-          `${API_URL}/api/admin/messages?page=${page}&limit=5`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
-
-        const data = await res.json();
-
-        if (!res.ok) {
-          throw new Error(data.message || "Failed to fetch messages");
+      const res = await fetch(
+        `${API_URL}/api/admin/messages?page=${page}&limit=5`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
         }
+      );
 
-        setMessages(data.messages || []);
-        setPages(data.pagination.pages);
-      } catch (err) {
-        setError("Unauthorized or server error");
-      } finally {
-        setLoading(false);
-      }
+      const data = await res.json();
+      setMessages(data.messages || []);
+      setPages(data.pagination.pages);
+      setLoading(false);
     };
 
     fetchMessages();
-  }, [token, page]);
+  }, [page, token]);
 
   const deleteMessage = async (id) => {
     if (!window.confirm("Delete this message?")) return;
 
     await fetch(`${API_URL}/api/admin/messages/${id}`, {
       method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
+      headers: { Authorization: `Bearer ${token}` },
     });
 
     setMessages((prev) => prev.filter((m) => m._id !== id));
-  };
-
-  const markRead = async (id) => {
-    await fetch(`${API_URL}/api/admin/messages/${id}/read`, {
-      method: "PATCH",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-
-    setMessages((prev) =>
-      prev.map((m) =>
-        m._id === id ? { ...m, isRead: true } : m
-      )
-    );
   };
 
   const handleLogout = () => {
@@ -81,77 +52,99 @@ function AdminDashboard() {
   };
 
   if (loading) return <p className="admin-empty">Loading messages...</p>;
-  if (error) return <p className="admin-empty">{error}</p>;
 
   return (
-    <div className="admin-wrapper">
-      <div className="admin-container">
-        <div className="admin-header">
-          <h2>Admin Dashboard</h2>
-          <button className="logout-btn" onClick={handleLogout}>
-            Logout
-          </button>
-        </div>
+    <div className={`admin-wrapper ${darkMode ? "dark" : ""}`}>
+      {/* SIDEBAR */}
+      <aside className="admin-sidebar">
+        <h2 className="logo">CodeFlux</h2>
 
-        <div className="admin-stats">
-          <h3>Total Messages: {messages.length}</h3>
-        </div>
+        <button className="sidebar-btn active">Dashboard</button>
 
-        {messages.map((msg) => (
-          <div
-            key={msg._id}
-            className={`message-card ${msg.isRead ? "read" : "unread"}`}
-          >
-            <p><strong>Name:</strong> {msg.name}</p>
-            <p><strong>Email:</strong> {msg.email}</p>
-            <p><strong>Message:</strong> {msg.message}</p>
-            <small>{new Date(msg.createdAt).toLocaleString()}</small>
+        <button
+          className="sidebar-btn"
+          onClick={() => setDarkMode(!darkMode)}
+        >
+          {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+        </button>
 
-            <div className="message-actions">
-              <a
-                href={`mailto:${msg.email}?subject=Reply from CodeFlux`}
-                className="reply-btn"
-              >
-                Reply
-              </a>
+        <button className="sidebar-logout" onClick={handleLogout}>
+          Logout
+        </button>
+      </aside>
 
-              {!msg.isRead && (
-                <button
-                  className="read-btn"
-                  onClick={() => markRead(msg._id)}
-                >
-                  Mark as Read
-                </button>
-              )}
+      {/* MAIN CONTENT */}
+      <main className="admin-main">
+        <h1>Admin Dashboard</h1>
 
-              <button
-                className="delete-btn"
-                onClick={() => deleteMessage(msg._id)}
-              >
-                Delete
-              </button>
-            </div>
+        {/* STATS */}
+        <div className="stats-grid">
+          <div className="stat-card">
+            <span>Today</span>
+            <strong>{messages.length}</strong>
           </div>
-        ))}
+          <div className="stat-card">
+            <span>This Week</span>
+            <strong>{messages.length}</strong>
+          </div>
+          <div className="stat-card">
+            <span>Total</span>
+            <strong>{messages.length}</strong>
+          </div>
+        </div>
 
+        {/* EMPTY STATE */}
+        {messages.length === 0 ? (
+          <div className="empty-card">
+            📭 No messages yet
+          </div>
+        ) : (
+          messages.map((msg) => (
+            <div key={msg._id} className="message-card">
+              <h3>👤 {msg.name}</h3>
+
+              <p className="email">📧 {msg.email}</p>
+
+              <p className="message">
+                💬 {msg.message}
+              </p>
+
+              <small>🕒 {new Date(msg.createdAt).toLocaleString()}</small>
+
+              <div className="message-actions">
+                <a
+                  href={`mailto:${msg.email}?subject=Reply from CodeFlux`}
+                  className="reply-btn"
+                >
+                  Reply
+                </a>
+
+                <button
+                  className="delete-btn"
+                  onClick={() => deleteMessage(msg._id)}
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          ))
+        )}
+
+        {/* PAGINATION */}
         <div className="pagination">
-          <button
-            disabled={page === 1}
-            onClick={() => setPage((p) => p - 1)}
-          >
+          <button disabled={page === 1} onClick={() => setPage(page - 1)}>
             Previous
           </button>
 
-          <span>Page {page} of {pages}</span>
+          <span>
+            Page {page} of {pages}
+          </span>
 
-          <button
-            disabled={page === pages}
-            onClick={() => setPage((p) => p + 1)}
-          >
+          <button disabled={page === pages} onClick={() => setPage(page + 1)}>
             Next
           </button>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

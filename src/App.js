@@ -1,5 +1,10 @@
 import { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -11,19 +16,16 @@ import AdminLogin from "./pages/admin/AdminLogin";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import ProtectedRoute from "./components/admin/ProtectedRoute";
 
-function App() {
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      offset: 100,
-      easing: "ease-in-out",
-      once: true
-    });
-  }, []);
+/* ================= LAYOUT WRAPPER ================= */
+function Layout() {
+  const location = useLocation();
+
+  // 🔐 Hide navbar & footer on admin routes
+  const isAdminRoute = location.pathname.startsWith("/admin");
 
   return (
-    <Router>
-      <Navbar />
+    <>
+      {!isAdminRoute && <Navbar />}
 
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -39,7 +41,24 @@ function App() {
         />
       </Routes>
 
-      <Footer />
+      {!isAdminRoute && <Footer />}
+    </>
+  );
+}
+
+function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      offset: 100,
+      easing: "ease-in-out",
+      once: true,
+    });
+  }, []);
+
+  return (
+    <Router>
+      <Layout />
     </Router>
   );
 }

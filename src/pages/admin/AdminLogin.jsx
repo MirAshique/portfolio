@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Admin.css";
 
 function AdminLogin() {
   const [email, setEmail] = useState("");
@@ -8,6 +9,10 @@ function AdminLogin() {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.title = "Admin Login | CodeFlux";
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,7 +25,7 @@ function AdminLogin() {
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, password })
+          body: JSON.stringify({ email, password }),
         }
       );
 
@@ -31,9 +36,7 @@ function AdminLogin() {
         return;
       }
 
-      // ✅ Save token
       localStorage.setItem("adminToken", data.token);
-
       navigate("/admin/dashboard");
     } catch (err) {
       setError("Server error");
@@ -43,32 +46,41 @@ function AdminLogin() {
   };
 
   return (
-    <div style={{ maxWidth: 400, margin: "80px auto" }}>
-      <h2>Admin Login</h2>
+    <div className="admin-login-wrapper">
+      <div className="admin-login-card">
+        <h2>Admin Login</h2>
+        <p className="login-subtitle">
+          Secure access to CodeFlux dashboard
+        </p>
 
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Admin Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+        {error && <p className="login-error">{error}</p>}
 
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+        <form onSubmit={handleSubmit}>
+          <input
+            type="email"
+            placeholder="Admin Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
 
-        <button type="submit" disabled={loading}>
-          {loading ? "Logging in..." : "Login"}
-        </button>
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
 
-        {error && <p style={{ color: "red" }}>{error}</p>}
-      </form>
+          <button type="submit" disabled={loading}>
+            {loading ? "Logging in..." : "Login"}
+          </button>
+        </form>
+
+        <small className="login-footer">
+          © {new Date().getFullYear()} CodeFlux Admin Panel
+        </small>
+      </div>
     </div>
   );
 }
