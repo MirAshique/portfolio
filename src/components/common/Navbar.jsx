@@ -1,20 +1,21 @@
 import { useState, useEffect } from "react";
 import "./Navbar.css";
 
+/* ✅ MOVE OUTSIDE COMPONENT */
+const sections = [
+  "home",
+  "about",
+  "skills",
+  "projects",
+  "services",
+  "testimonials",
+  "contact",
+];
+
 function Navbar() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
-
-  const sections = [
-    "home",
-    "about",
-    "skills",
-    "projects",
-    "services",
-    "testimonials",
-    "contact",
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,9 +39,11 @@ function Navbar() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [sections]); // ✅ ESLint satisfied
 
-  const handleLinkClick = () => setOpen(false);
+  const handleLinkClick = () => {
+    setOpen(false);
+  };
 
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
@@ -59,13 +62,6 @@ function Navbar() {
               </a>
             </li>
           ))}
-
-          {/* CTA BUTTON */}
-          <li className="nav-cta">
-            <a href="#contact" className="cta-btn" onClick={handleLinkClick}>
-              Hire Me
-            </a>
-          </li>
         </ul>
 
         <div className="hamburger" onClick={() => setOpen(!open)}>
