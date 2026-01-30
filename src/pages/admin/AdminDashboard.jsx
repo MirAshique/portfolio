@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Admin.css";
 
-const API_URL = "https://portfolio-backend-09r1.onrender.com";
+const API_URL = process.env.REACT_APP_API_URL;
 
 function AdminDashboard() {
   const [messages, setMessages] = useState([]);
@@ -26,10 +26,13 @@ function AdminDashboard() {
 
         const data = await res.json();
 
-        if (!res.ok) throw new Error(data.message);
+        if (!res.ok) {
+          throw new Error(data.message || "Failed to fetch messages");
+        }
 
         setMessages(data.messages || []);
       } catch (err) {
+        console.error(err);
         setError("Unauthorized or server error");
       } finally {
         setLoading(false);
