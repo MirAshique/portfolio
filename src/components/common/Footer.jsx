@@ -29,7 +29,7 @@ function Footer() {
             </a>
 
             <a
-              href="#"
+              href="https://www.linkedin.com"
               target="_blank"
               rel="noreferrer"
               aria-label="LinkedIn"
@@ -38,15 +38,18 @@ function Footer() {
             </a>
 
             <a
-              href="#"
+              href="https://www.fiverr.com"
               target="_blank"
               rel="noreferrer"
-              aria-label="Fiverr / Upwork"
+              aria-label="Fiverr or Upwork"
             >
               <FaBriefcase />
             </a>
 
-            <a href="mailto:ashiqtalpur18@gmail.com" aria-label="Email">
+            <a
+              href="mailto:ashiqtalpur18@gmail.com"
+              aria-label="Email"
+            >
               <FaEnvelope />
             </a>
           </div>
