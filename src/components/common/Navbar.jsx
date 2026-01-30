@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Navbar.css";
 
-/* ✅ MOVE OUTSIDE COMPONENT */
+/* Static sections (do not change at runtime) */
 const sections = [
   "home",
   "about",
@@ -39,7 +39,9 @@ function Navbar() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [sections]); // ✅ ESLint satisfied
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // ✅ correct: static outer constant
 
   const handleLinkClick = () => {
     setOpen(false);
