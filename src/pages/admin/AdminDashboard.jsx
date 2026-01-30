@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./Admin.css";
 
 const API_URL = process.env.REACT_APP_API_URL;
+console.log("API URL:", API_URL);
 
 function AdminDashboard() {
   const [messages, setMessages] = useState([]);
@@ -24,13 +25,14 @@ function AdminDashboard() {
           },
         });
 
-        const data = await res.json();
+      const data = await res.json();
 
-        if (!res.ok) {
-          throw new Error(data.message || "Failed to fetch messages");
-        }
+if (!res.ok) {
+  throw new Error(data.message || "Failed to fetch messages");
+}
 
-        setMessages(data.messages || []);
+// ✅ FIX HERE
+setMessages(Array.isArray(data) ? data : data.messages || []);
       } catch (err) {
         console.error(err);
         setError("Unauthorized or server error");
