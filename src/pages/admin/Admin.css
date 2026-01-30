@@ -105,3 +105,61 @@
     gap: 12px;
   }
 }
+.message-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.reply-btn {
+  background: #2563eb;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.reply-btn:hover {
+  background: #1d4ed8;
+}
+
+.delete-btn {
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
+.message-card.unread {
+  border-left: 5px solid #2563eb;
+  background: #f8fafc;
+}
+
+.message-card.read {
+  opacity: 0.8;
+}
+
+.read-btn {
+  background: #16a34a;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 30px 0;
+}
