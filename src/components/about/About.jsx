@@ -11,8 +11,8 @@ function About() {
 
           <div className="about-text">
             <p>
-             Hi, I’m <strong>Hussain</strong> — founder of <strong>CodeFlux</strong>, a{" "}
-  <strong>MERN Stack Developer</strong> specializing in building
+             Hi, I’m <strong>Hussain</strong>, founder of <strong>CodeFlux</strong> —
+  a <strong>MERN Stack Developer</strong> specializing in building
   custom <strong>management systems</strong> and scalable web
   applications for businesses.
             </p>
