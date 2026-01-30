@@ -1,13 +1,179 @@
-body {
+/* =========================
+   GLOBAL RESET & BASE
+========================= */
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  background-color: #ffffff;
+  color: #1e293b;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* =========================
+   TYPOGRAPHY POLISH
+========================= */
+h1, h2, h3, h4 {
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #0f172a;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.3rem;
+  margin-bottom: 20px;
+}
+
+p {
+  max-width: 720px;
+  margin: 0 auto;
+  color: #475569;
+  font-size: 1.05rem;
+}
+
+/* =========================
+   LAYOUT HELPERS
+========================= */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 100px 0;
+}
+
+/* =========================
+   SECTION BACKGROUNDS
+========================= */
+.section-light {
+  background: #ffffff;
+}
+
+.section-gray {
+  background: #f8fafc;
+}
+
+.section-gradient {
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  color: #ffffff;
+}
+
+.section-dark {
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: #ffffff;
+}
+
+/* =========================
+   CARD (PROJECTS / SERVICES / TESTIMONIALS)
+========================= */
+.card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   BUTTONS (GLOBAL)
+========================= */
+.btn {
+  display: inline-block;
+  padding: 14px 26px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background: #facc15;
+  color: #1e293b;
+}
+
+.btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(250, 204, 21, 0.35);
+}
+
+.btn.secondary {
+  border: 2px solid #facc15;
+  color: #facc15;
+  background: transparent;
+}
+
+.btn.secondary:hover {
+  background: #facc15;
+  color: #1e293b;
+}
+
+/* =========================
+   IMAGES
+========================= */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================
+   UTILITIES
+========================= */
+.text-center {
+  text-align: center;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+/* =========================
+   FOOTER BASE
+========================= */
+footer {
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: #cbd5f5;
+}
+/* =========================
+   MOBILE GLOBAL POLISH
+========================= */
+@media (max-width: 768px) {
+  section {
+    padding: 70px 0;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
 }

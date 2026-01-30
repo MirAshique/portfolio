@@ -1,25 +1,39 @@
 import "./Hero.css";
 import developerImg from "../../assets/images/developer.png";
+
 function Hero() {
   return (
-    <section className="hero" id="home" data-aos="fade-down">
+    <section
+      className="hero section-gradient"
+      id="home"
+      data-aos="fade-down"
+    >
       <div className="container hero-container">
         <div className="hero-text">
           <h1>
-            Hi, I’m <span className="highlight">Hussain</span>
+            I build <span className="highlight">Management Systems</span> for
+            Growing Businesses
           </h1>
+
           <h2>MERN Stack Developer</h2>
+
           <p>
-            I build modern, scalable, and responsive web applications.  
-            Ready to turn your ideas into reality.
+            I help hotels, restaurants, and startups streamline their operations
+            with custom dashboards, admin panels, and scalable web applications.
           </p>
+
           <div className="hero-buttons">
-            <a href="#contact" className="btn primary">Hire Me</a>
-            <a href="#projects" className="btn secondary">View Projects</a>
+            <a href="#contact" className="btn primary">
+              Get a Free Consultation
+            </a>
+            <a href="#projects" className="btn secondary">
+              View Demo Projects
+            </a>
           </div>
         </div>
+
         <div className="hero-image">
-          <img src={developerImg} alt="Hussain" />
+          <img src={developerImg} alt="Hussain - MERN Developer" />
         </div>
       </div>
     </section>

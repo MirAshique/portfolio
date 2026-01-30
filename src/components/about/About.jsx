@@ -2,30 +2,39 @@ import "./About.css";
 
 function About() {
   return (
-    <section className="about" id="about" data-aos="fade-up">
+    <section className="about section-light" id="about" data-aos="fade-up">
       <div className="container about-container">
         <h2>About Me</h2>
 
-        <div className="about-content">
+        <div className="about-card">
+          <div className="about-accent"></div>
+
           <div className="about-text">
             <p>
-              Hello! I’m <strong>Hussain</strong>, a passionate{" "}
-              <strong>MERN Stack Developer</strong> focused on building modern,
-              scalable, and high-performance web applications.
+             Hi, I’m <strong>Hussain</strong> — founder of <strong>CodeFlux</strong>, a{" "}
+  <strong>MERN Stack Developer</strong> specializing in building
+  custom <strong>management systems</strong> and scalable web
+  applications for businesses.
             </p>
 
             <p>
-              I specialize in developing full-stack solutions such as{" "}
-              <strong>Restaurant Management Systems</strong>,{" "}
-              <strong>Hotel Management Systems</strong>, and custom web
-              applications tailored to meet client requirements.
+              I focus on developing solutions such as{" "}
+              <strong>Hotel Management Systems</strong>,{" "}
+              <strong>Restaurant Management Systems</strong>, and custom admin
+              dashboards that help businesses organize data, automate workflows,
+              and improve daily operations.
             </p>
 
             <p>
-              With a strong emphasis on clean UI, efficient backend
-              architecture, and responsive design, I aim to deliver reliable
-              and user-friendly digital experiences that solve real-world
-              problems.
+              My approach is simple: understand the business requirements,
+              design a clean and intuitive user interface, and build a secure,
+              efficient backend that can scale as the business grows.
+            </p>
+
+            <p>
+              Whether you need a complete system from scratch or want to improve
+              an existing application, I aim to deliver reliable, maintainable,
+              and user-friendly solutions using modern web technologies.
             </p>
 
             <div className="about-skills">
@@ -33,7 +42,7 @@ function About() {
               <span>Express.js</span>
               <span>React.js</span>
               <span>Node.js</span>
-              <span>JavaScript</span>
+              <span>REST APIs</span>
             </div>
           </div>
         </div>

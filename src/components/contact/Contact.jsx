@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Contact.css";
+
+const API_URL = import.meta.env.VITE_API_URL;
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -9,7 +11,7 @@ function Contact() {
   });
 
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState({ message: "", type: "" });
 
   const handleChange = (e) => {
     setFormData({
@@ -21,49 +23,63 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setStatus("");
+    setStatus({ message: "", type: "" });
 
     try {
-      const response = await fetch(
-        "https://portfolio-backend-09r1.onrender.com/api/contact",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(formData)
-        }
-      );
+      const response = await fetch(`${API_URL}/api/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
 
       const data = await response.json();
 
-      // ✅ SUCCESS
       if (response.ok && data.success) {
-        setStatus("✅ Message sent successfully!");
+        setStatus({
+          message: "Message sent successfully!",
+          type: "success"
+        });
+
         setFormData({
           name: "",
           email: "",
           message: ""
         });
+      } else {
+        setStatus({
+          message: data.message || "Failed to send message",
+          type: "error"
+        });
       }
-      // ❌ BACKEND VALIDATION ERROR
-      else {
-        setStatus(`❌ ${data.message || "Failed to send message"}`);
-      }
-
     } catch (error) {
       console.error("Contact API Error:", error);
-      setStatus("❌ Server is unreachable. Please try again later.");
+      setStatus({
+        message: "Server is unreachable. Please try again later.",
+        type: "error"
+      });
     } finally {
       setLoading(false);
     }
   };
 
+  useEffect(() => {
+    if (status.message) {
+      const timer = setTimeout(() => {
+        setStatus({ message: "", type: "" });
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [status]);
+
   return (
     <section className="contact" id="contact" data-aos="fade-up">
       <div className="container contact-container">
         <h2>Contact Me</h2>
-        <p>Get in touch for freelance projects or collaborations.</p>
+        <p>
+          Tell me about your project and I’ll get back to you as soon as possible.
+        </p>
 
         <form className="contact-form" onSubmit={handleSubmit}>
           <input
@@ -72,6 +88,7 @@ function Contact() {
             placeholder="Your Name"
             value={formData.name}
             onChange={handleChange}
+            disabled={loading}
             required
           />
 
@@ -81,6 +98,7 @@ function Contact() {
             placeholder="Your Email"
             value={formData.email}
             onChange={handleChange}
+            disabled={loading}
             required
           />
 
@@ -90,50 +108,23 @@ function Contact() {
             rows="5"
             value={formData.message}
             onChange={handleChange}
+            disabled={loading}
             required
           ></textarea>
 
-          <button
-            type="submit"
-            className="btn primary"
-            disabled={loading}
-          >
+          <button type="submit" className="btn primary" disabled={loading}>
             {loading ? "Sending..." : "Send Message"}
           </button>
 
-          {status && <p className="form-status">{status}</p>}
-        </form>
+          {/* ✅ Trust line */}
+          <p className="contact-note">⏱ Response within 24 hours</p>
 
-        <div className="social-links">
-          <a
-            href="https://github.com/MirAshique"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub
-          </a>
-          <a
-            href="https://www.linkedin.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            LinkedIn
-          </a>
-          <a
-            href="https://www.fiverr.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Fiverr
-          </a>
-          <a
-            href="https://www.upwork.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Upwork
-          </a>
-        </div>
+          {status.message && (
+            <p className={`form-status ${status.type}`}>
+              {status.message}
+            </p>
+          )}
+        </form>
       </div>
     </section>
   );

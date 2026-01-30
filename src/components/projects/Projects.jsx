@@ -4,25 +4,28 @@ import ProjectCard from "./ProjectCard";
 function Projects() {
   const projects = [
     {
-      title: "Restaurant Management System",
+      title: "Restaurant Management System (Demo)",
       description:
-        "Full-stack MERN app to manage restaurant operations, menu, and orders.",
+        "A custom-built system designed to manage restaurant menus, orders, and admin operations. Built with MERN stack and scalable backend architecture.",
       image: "https://i.ibb.co/7W9Qf7R/project1.png",
-      link: "#",
+      link: "#contact",
+      tag: "In Development",
     },
     {
-      title: "Hotel Management System",
+      title: "Hotel Management System (Custom Build)",
       description:
-        "Modern MERN app to handle hotel bookings, rooms, and customers.",
+        "A hotel management solution focused on bookings, rooms, customers, and admin dashboards. Designed to be customized for real hotel businesses.",
       image: "https://i.ibb.co/7W9Qf7R/project2.png",
-      link: "#",
+      link: "#contact",
+      tag: "Demo Ready",
     },
   ];
 
   return (
     <section className="projects" id="projects" data-aos="fade-up">
       <div className="container projects-container">
-        <h2>My Projects</h2>
+        <h2>Management Systems & Demo Projects</h2>
+
         <div className="projects-grid">
           {projects.map((project, idx) => (
             <ProjectCard key={idx} project={project} />
