@@ -1,24 +1,24 @@
 import "./Services.css";
-import { FaHotel, FaUtensils, FaCode } from "react-icons/fa";
+import { FaCalendarCheck, FaHotel, FaCode } from "react-icons/fa";
 
 function Services() {
   const services = [
     {
-      title: "Hotel Management Systems",
+      title: "Appointment & Booking Platforms",
       description:
-        "Custom-built hotel management solutions including room bookings, customer records, admin dashboards, and scalable backend APIs.",
+        "Full-stack booking systems with JWT authentication, role-based dashboards, real-time availability checks, email notifications, analytics, and production deployment.",
+      icon: <FaCalendarCheck />,
+    },
+    {
+      title: "Hotel & Business Management Systems",
+      description:
+        "Complete administration platforms including booking lifecycle control, revenue analytics, room management, admin dashboards, and scalable backend APIs.",
       icon: <FaHotel />,
     },
     {
-      title: "Restaurant Management Systems",
+      title: "Custom MERN SaaS Applications",
       description:
-        "End-to-end restaurant systems to manage menus, orders, staff, and admin operations with real-time data handling.",
-      icon: <FaUtensils />,
-    },
-    {
-      title: "Custom MERN Web Applications",
-      description:
-        "Tailored MERN stack applications built to match your business needs, with clean UI, secure backend, and scalable architecture.",
+        "Tailored MERN stack applications with secure authentication, RESTful APIs, Cloudinary integration, email services, and scalable architecture for modern businesses.",
       icon: <FaCode />,
     },
   ];
@@ -26,7 +26,10 @@ function Services() {
   return (
     <section className="services" id="services" data-aos="fade-up">
       <div className="container services-container">
-        <h2>Services I Provide</h2>
+        <h2>Core Solutions I Build</h2>
+        <p className="services-subtitle">
+          Production-ready full stack systems designed for real-world business operations.
+        </p>
 
         <div className="services-grid">
           {services.map((service, index) => (

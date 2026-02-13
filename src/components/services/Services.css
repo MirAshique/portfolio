@@ -4,7 +4,7 @@
 
 .services {
   padding: var(--section-padding) 0;
-  background: #ffffff;
+  background: linear-gradient(135deg, #f8fafc, #eef2ff);
 }
 
 .services-container {
@@ -17,16 +17,26 @@
   font-size: 2.6rem;
   font-weight: 800;
   color: #0f172a;
-  margin-bottom: 60px;
+  margin-bottom: 15px;
   letter-spacing: -0.5px;
 }
 
-/* Grid */
+.services-subtitle {
+  max-width: 600px;
+  margin: 0 auto 60px;
+  color: #64748b;
+  font-size: 1rem;
+}
+
+/* =========================
+   GRID
+========================= */
+
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 35px;
-  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  align-items: stretch;
 }
 
 /* =========================
@@ -34,34 +44,39 @@
 ========================= */
 
 .service-card {
-  background: #f8fafc;
+  background: #ffffff;
   border-radius: 22px;
-  padding: 36px 28px;
-  max-width: 340px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  padding: 40px 30px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
   transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .service-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.15);
 }
 
 /* Icon */
+
 .service-icon {
-  width: 70px;
-  height: 70px;
-  margin: 0 auto 22px;
+  width: 75px;
+  height: 75px;
+  margin: 0 auto 25px;
   border-radius: 18px;
   background: linear-gradient(135deg, #2563eb, #4f46e5);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  font-size: 2rem;
+  font-size: 1.9rem;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
 }
 
 /* Title */
+
 .service-card h3 {
   font-size: 1.3rem;
   font-weight: 700;
@@ -70,8 +85,21 @@
 }
 
 /* Description */
+
 .service-card p {
   font-size: 0.95rem;
   color: #475569;
   line-height: 1.7;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .services h2 {
+    font-size: 2.2rem;
+  }
+
+  .service-card {
+    padding: 30px 24px;
+  }
 }

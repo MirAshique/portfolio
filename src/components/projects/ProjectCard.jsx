@@ -6,13 +6,16 @@ function ProjectCard({ project }) {
       <img src={project.image} alt={project.title} />
 
       <div className="project-info">
-        <span className="project-tag">{project.tag}</span>
-
         <h3>{project.title}</h3>
         <p>{project.description}</p>
 
-        <a href={project.link} className="btn primary">
-          Request Similar System
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn primary"
+        >
+          Live Demo
         </a>
       </div>
     </div>
