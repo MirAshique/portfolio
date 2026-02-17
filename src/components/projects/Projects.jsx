@@ -10,7 +10,6 @@ function Projects() {
       image:
         "https://res.cloudinary.com/doihfukwc/image/upload/v1771004419/Appoinment_a0sgjv.png",
       link: "https://appointment-system-wheat-iota.vercel.app/",
-      
     },
     {
       title: "Hotel Management System – Full Stack MERN",
@@ -19,7 +18,14 @@ function Projects() {
       image:
         "https://res.cloudinary.com/doihfukwc/image/upload/v1771004448/hotel_czcvdv.png",
       link: "https://hotel-management-system-chi-rose.vercel.app/",
-      
+    },
+    {
+      title: "QuickCart – Full Stack SaaS eCommerce Platform",
+      description:
+        "A modern SaaS-ready full-stack eCommerce platform built with MERN and Stripe. Includes secure JWT + OTP authentication, advanced filtering system, multi-level product structure, admin analytics dashboard with revenue visualization, and cloud-ready deployment using Vercel and Render.",
+      image:
+        "https://res.cloudinary.com/doihfukwc/image/upload/v1771353137/Screenshot_2026-02-17_230649_nlddxn.png", // 🔥 replace this
+      link: "https://quickcart-fullstack.vercel.app/", // 🔥 replace this
     },
   ];
 

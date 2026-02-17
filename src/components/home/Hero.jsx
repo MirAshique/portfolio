@@ -10,16 +10,16 @@ function Hero() {
       <div className="container hero-container">
         <div className="hero-text">
           <h1>
-            I Build <span className="highlight">Scalable Management Systems</span> 
-            & Booking Platforms
+            I Build <span className="highlight">Scalable SaaS Platforms</span> 
+            & Business Automation Systems
           </h1>
 
           <h2>Full Stack MERN Developer</h2>
 
           <p>
-            I help hotels, clinics, restaurants, and startups automate their 
-            operations with custom dashboards, booking systems, admin panels, 
-            and production-ready web applications.
+            From appointment booking platforms and hotel management systems 
+            to full-stack eCommerce applications, I design secure, scalable, 
+            and production-ready MERN solutions built for real-world businesses.
           </p>
 
           <div className="hero-buttons">
@@ -35,7 +35,7 @@ function Hero() {
         <div className="hero-image-wrapper">
           <img
             src="https://res.cloudinary.com/doihfukwc/image/upload/v1771004235/ChatGPT_Image_Feb_13_2026_10_34_40_PM_nlvqgt.png"
-            alt="Admin Dashboard Preview"
+            alt="Full Stack SaaS Dashboard Preview"
             className="hero-image"
           />
         </div>

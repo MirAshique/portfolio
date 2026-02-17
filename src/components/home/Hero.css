@@ -17,8 +17,19 @@
   gap: 60px;
 }
 
+/* LEFT SIDE */
 .hero-text {
+  flex: 1;
   max-width: 600px;
+}
+
+/* RIGHT SIDE */
+.hero-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .hero h1 {
@@ -85,13 +96,9 @@
 }
 
 /* Hero Image Styling */
-.hero-image-wrapper {
-  position: relative;
-}
-
 .hero-image {
   width: 100%;
-  max-width: 520px;
+  max-width: 600px;   /* slightly bigger */
   border-radius: 20px;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
   transition: transform 0.4s ease;
@@ -105,7 +112,7 @@
 .hero-image-wrapper::before {
   content: "";
   position: absolute;
-  inset: -30px;
+  inset: -40px;
   background: radial-gradient(circle, rgba(59,130,246,0.25), transparent 70%);
   z-index: -1;
   border-radius: 30px;

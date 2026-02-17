@@ -11,30 +11,34 @@ function About() {
 
           <div className="about-text">
             <p>
-             Hi, I’m <strong>Hussain</strong>, founder of <strong>CodeFlux</strong> —
-  a <strong>MERN Stack Developer</strong> specializing in building
-  custom <strong>management systems</strong> and scalable web
-  applications for businesses.
+              Hi, I’m <strong>Hussain</strong>, founder of{" "}
+              <strong>CodeFlux</strong> — a{" "}
+              <strong>Full Stack MERN Developer</strong> focused on building
+              scalable <strong>SaaS platforms</strong>, booking systems, and
+              business automation applications.
             </p>
 
             <p>
-              I focus on developing solutions such as{" "}
-              <strong>Hotel Management Systems</strong>,{" "}
-              <strong>Restaurant Management Systems</strong>, and custom admin
-              dashboards that help businesses organize data, automate workflows,
-              and improve daily operations.
+              I have developed production-ready systems including an{" "}
+              <strong>Appointment Booking Platform</strong>, a{" "}
+              <strong>Hotel Management System</strong>, and a full-stack{" "}
+              <strong>SaaS eCommerce platform with Stripe integration</strong>.
+              My solutions combine secure authentication, role-based access
+              control, analytics dashboards, and cloud deployment.
             </p>
 
             <p>
-              My approach is simple: understand the business requirements,
+              My approach is simple: understand business requirements,
               design a clean and intuitive user interface, and build a secure,
-              efficient backend that can scale as the business grows.
+              scalable backend architecture that performs reliably in
+              real-world environments.
             </p>
 
             <p>
-              Whether you need a complete system from scratch or want to improve
-              an existing application, I aim to deliver reliable, maintainable,
-              and user-friendly solutions using modern web technologies.
+              Whether you're launching a startup, automating internal
+              operations, or building a full SaaS product, I focus on delivering
+              maintainable, production-ready applications using modern
+              technologies.
             </p>
 
             <div className="about-skills">
@@ -42,6 +46,9 @@ function About() {
               <span>Express.js</span>
               <span>React.js</span>
               <span>Node.js</span>
+              <span>JWT Auth</span>
+              <span>Stripe</span>
+              <span>Cloudinary</span>
               <span>REST APIs</span>
             </div>
           </div>

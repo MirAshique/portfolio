@@ -4,19 +4,19 @@ import { FaQuoteLeft } from "react-icons/fa";
 function Testimonials() {
   const testimonials = [
     {
-      title: "Demo Project Review",
+      title: "Booking Platform Implementation",
       feedback:
-        "The Restaurant Management System demo shows strong backend logic, clean UI, and a well-structured MERN architecture. The project demonstrates a solid understanding of real business workflows.",
+        "The appointment booking system was delivered with secure authentication, real-time availability validation, and a clean admin dashboard. The architecture is scalable and ready for production deployment.",
     },
     {
-      title: "Practice System Feedback",
+      title: "Hotel Management System",
       feedback:
-        "The Hotel Management System design is well-planned, scalable, and suitable for real-world use. Admin dashboard structure and API flow are implemented professionally.",
+        "The hotel administration platform includes structured booking workflows, revenue tracking, and an intuitive dashboard. Backend APIs are well-designed and the system performs smoothly in real-world scenarios.",
     },
     {
-      title: "Learning Collaboration",
+      title: "SaaS eCommerce Development",
       feedback:
-        "Hussain approaches projects with a problem-solving mindset, focusing on clean code, usability, and scalable solutions. Communication and implementation are clear and structured.",
+        "The eCommerce platform integrates Stripe payments, advanced product management, and secure role-based authentication. The project reflects strong full-stack expertise and production-level implementation.",
     },
   ];
 
@@ -27,7 +27,7 @@ function Testimonials() {
       data-aos="fade-up"
     >
       <div className="container testimonials-container">
-        <h2>Feedback & Project Reviews</h2>
+        <h2>Project Highlights & Feedback</h2>
 
         <div className="testimonials-grid">
           {testimonials.map((t, index) => (

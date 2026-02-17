@@ -1,25 +1,25 @@
 import "./Services.css";
-import { FaCalendarCheck, FaHotel, FaCode } from "react-icons/fa";
+import { FaCalendarCheck, FaHotel, FaShoppingCart } from "react-icons/fa";
 
 function Services() {
   const services = [
     {
       title: "Appointment & Booking Platforms",
       description:
-        "Full-stack booking systems with JWT authentication, role-based dashboards, real-time availability checks, email notifications, analytics, and production deployment.",
+        "Production-ready booking systems with JWT authentication, role-based dashboards, real-time availability validation, email notifications, analytics charts, and cloud deployment.",
       icon: <FaCalendarCheck />,
     },
     {
       title: "Hotel & Business Management Systems",
       description:
-        "Complete administration platforms including booking lifecycle control, revenue analytics, room management, admin dashboards, and scalable backend APIs.",
+        "Complete business administration platforms including booking lifecycle control, revenue tracking, room or resource management, admin dashboards, and scalable backend APIs.",
       icon: <FaHotel />,
     },
     {
-      title: "Custom MERN SaaS Applications",
+      title: "SaaS & eCommerce Applications",
       description:
-        "Tailored MERN stack applications with secure authentication, RESTful APIs, Cloudinary integration, email services, and scalable architecture for modern businesses.",
-      icon: <FaCode />,
+        "Full-stack MERN SaaS platforms with secure authentication, Stripe payment integration, advanced product management, RESTful APIs, Cloudinary image hosting, and scalable architecture.",
+      icon: <FaShoppingCart />,
     },
   ];
 

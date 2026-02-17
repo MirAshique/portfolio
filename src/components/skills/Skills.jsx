@@ -7,7 +7,12 @@ import {
   SiJavascript,
   SiHtml5,
   SiGithub,
+  SiStripe,
+  SiCloudinary,
+  SiVercel,
+  SiRender,
 } from "react-icons/si";
+import { FaLock, FaServer } from "react-icons/fa";
 
 function Skills() {
   const skills = [
@@ -17,13 +22,19 @@ function Skills() {
     { name: "Node.js", icon: <SiNodedotjs /> },
     { name: "JavaScript", icon: <SiJavascript /> },
     { name: "HTML & CSS", icon: <SiHtml5 /> },
+    { name: "REST APIs", icon: <FaServer /> },
+    { name: "JWT Authentication", icon: <FaLock /> },
+    { name: "Stripe Integration", icon: <SiStripe /> },
+    { name: "Cloudinary", icon: <SiCloudinary /> },
+    { name: "Vercel (Frontend Deployment)", icon: <SiVercel /> },
+    { name: "Render (Backend Deployment)", icon: <SiRender /> },
     { name: "Git & GitHub", icon: <SiGithub /> },
   ];
 
   return (
     <section className="skills section-gray" id="skills" data-aos="fade-up">
       <div className="container skills-container">
-        <h2>My Skills</h2>
+        <h2>Technical Expertise</h2>
 
         <div className="skills-grid">
           {skills.map((skill, index) => (
