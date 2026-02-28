@@ -1,16 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Navbar.css";
 
-/* Static sections (do not change at runtime) */
-const sections = [
-  "home",
-  "about",
-  "skills",
-  "projects",
-  "services",
-  "testimonials",
-  "contact",
-];
+const sections = ["home", "about", "projects", "services", "contact"];
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -19,12 +10,12 @@ function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 40);
 
       sections.forEach((id) => {
         const section = document.getElementById(id);
         if (section) {
-          const offset = section.offsetTop - 100;
+          const offset = section.offsetTop - 140;
           const height = section.offsetHeight;
 
           if (
@@ -39,26 +30,28 @@ function Navbar() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // ✅ correct: static outer constant
-
-  const handleLinkClick = () => {
-    setOpen(false);
-  };
+  const handleClick = () => setOpen(false);
 
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
-      <div className="container navbar-container">
-        <div className="logo">CodeFlux</div>
+      <div className="navbar-wrapper">
 
+        {/* LEFT — BRAND */}
+        <div className="brand">
+          <span className="brand-name">Hussain</span>
+          <span className="brand-sub">SaaS Systems Engineer</span>
+        </div>
+
+        {/* CENTER — LINKS */}
         <ul className={`nav-links ${open ? "open" : ""}`}>
           {sections.map((id) => (
             <li key={id}>
               <a
                 href={`#${id}`}
                 className={active === id ? "active" : ""}
-                onClick={handleLinkClick}
+                onClick={handleClick}
               >
                 {id.charAt(0).toUpperCase() + id.slice(1)}
               </a>
@@ -66,11 +59,19 @@ function Navbar() {
           ))}
         </ul>
 
-        <div className="hamburger" onClick={() => setOpen(!open)}>
-          <span></span>
-          <span></span>
-          <span></span>
+        {/* RIGHT — CTA */}
+        <div className="nav-right">
+          <a href="#contact" className="cta-button">
+            Let’s Talk
+          </a>
+
+          <div className="hamburger" onClick={() => setOpen(!open)}>
+            <span />
+            <span />
+            <span />
+          </div>
         </div>
+
       </div>
     </nav>
   );

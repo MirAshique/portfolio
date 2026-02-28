@@ -4,42 +4,72 @@ import { FaCalendarCheck, FaHotel, FaShoppingCart } from "react-icons/fa";
 function Services() {
   const services = [
     {
-      title: "Appointment & Booking Platforms",
+      title: "Booking & Scheduling Platforms",
       description:
-        "Production-ready booking systems with JWT authentication, role-based dashboards, real-time availability validation, email notifications, analytics charts, and cloud deployment.",
+        "Scalable appointment and booking systems designed with real-time availability logic, secure authentication, structured dashboards, and production-ready deployment.",
+      highlights: [
+        "JWT Role-Based Access",
+        "Real-Time Validation",
+        "Admin Dashboards",
+        "Cloud Deployment",
+      ],
       icon: <FaCalendarCheck />,
     },
     {
-      title: "Hotel & Business Management Systems",
+      title: "Business & Management Systems",
       description:
-        "Complete business administration platforms including booking lifecycle control, revenue tracking, room or resource management, admin dashboards, and scalable backend APIs.",
+        "Custom-built administration platforms for hotels and service businesses with lifecycle tracking, revenue analytics, and structured backend architecture.",
+      highlights: [
+        "Booking Workflows",
+        "Revenue Tracking",
+        "Inventory Control",
+        "Scalable REST APIs",
+      ],
       icon: <FaHotel />,
     },
     {
-      title: "SaaS & eCommerce Applications",
+      title: "SaaS & eCommerce Platforms",
       description:
-        "Full-stack MERN SaaS platforms with secure authentication, Stripe payment integration, advanced product management, RESTful APIs, Cloudinary image hosting, and scalable architecture.",
+        "Production-ready SaaS applications with secure authentication, Stripe payment integration, analytics dashboards, and scalable cloud infrastructure.",
+      highlights: [
+        "Stripe Integration",
+        "JWT + OTP Security",
+        "Advanced Product Logic",
+        "Cloud Architecture",
+      ],
       icon: <FaShoppingCart />,
     },
   ];
 
   return (
-    <section className="services" id="services" data-aos="fade-up">
+    <section className="services" id="services">
       <div className="container services-container">
-        <h2>Core Solutions I Build</h2>
-        <p className="services-subtitle">
-          Production-ready full stack systems designed for real-world business operations.
-        </p>
+
+        <div className="services-header">
+          <h2>Solution Offerings</h2>
+          <p>
+            Scalable full-stack systems engineered with clean architecture,
+            security-first design, and real-world deployment in mind.
+          </p>
+        </div>
 
         <div className="services-grid">
           {services.map((service, index) => (
             <div key={index} className="service-card">
               <div className="service-icon">{service.icon}</div>
+
               <h3>{service.title}</h3>
               <p>{service.description}</p>
+
+              <ul>
+                {service.highlights.map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

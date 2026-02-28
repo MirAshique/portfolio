@@ -16,11 +16,10 @@ import AdminLogin from "./pages/admin/AdminLogin";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import ProtectedRoute from "./components/admin/ProtectedRoute";
 
-/* ================= LAYOUT WRAPPER ================= */
+/* ================= LAYOUT ================= */
+
 function Layout() {
   const location = useLocation();
-
-  // 🔐 Hide navbar & footer on admin routes
   const isAdminRoute = location.pathname.startsWith("/admin");
 
   return (
@@ -46,14 +45,20 @@ function Layout() {
   );
 }
 
+/* ================= MAIN APP ================= */
+
 function App() {
   useEffect(() => {
+    // AOS
     AOS.init({
-      duration: 800,
-      offset: 100,
-      easing: "ease-in-out",
+      duration: 700,
+      easing: "ease-out-cubic",
       once: true,
     });
+
+    // Dynamic Page Title (Recruiter Optimized)
+    document.title =
+      "Hussain | SaaS Systems Engineer | MERN Architect | Stripe Integration";
   }, []);
 
   return (

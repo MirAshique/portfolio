@@ -2,57 +2,66 @@ import "./About.css";
 
 function About() {
   return (
-    <section className="about section-light" id="about" data-aos="fade-up">
+    <section className="about" id="about">
       <div className="container about-container">
-        <h2>About Me</h2>
 
-        <div className="about-card">
-          <div className="about-accent"></div>
+        <div className="about-header">
+          <h2>About</h2>
+          <p>
+            Product-focused engineer building scalable SaaS systems with secure architecture and real-world deployment.
+          </p>
+        </div>
 
-          <div className="about-text">
+        <div className="about-grid">
+
+          <div className="about-main">
+            <h3>Hussain — SaaS Systems Engineer</h3>
+
             <p>
-              Hi, I’m <strong>Hussain</strong>, founder of{" "}
-              <strong>CodeFlux</strong> — a{" "}
-              <strong>Full Stack MERN Developer</strong> focused on building
-              scalable <strong>SaaS platforms</strong>, booking systems, and
-              business automation applications.
+              I specialize in designing and developing full-stack SaaS platforms 
+              using the MERN stack, focused on clean architecture, scalability, 
+              and production-ready performance.
             </p>
 
             <p>
-              I have developed production-ready systems including an{" "}
-              <strong>Appointment Booking Platform</strong>, a{" "}
-              <strong>Hotel Management System</strong>, and a full-stack{" "}
-              <strong>SaaS eCommerce platform with Stripe integration</strong>.
-              My solutions combine secure authentication, role-based access
-              control, analytics dashboards, and cloud deployment.
+              My experience includes building structured booking systems, 
+              hotel management platforms, and SaaS-ready eCommerce systems 
+              with Stripe integration, role-based authentication, analytics 
+              dashboards, and cloud deployment.
             </p>
 
             <p>
-              My approach is simple: understand business requirements,
-              design a clean and intuitive user interface, and build a secure,
-              scalable backend architecture that performs reliably in
-              real-world environments.
+              I approach development with a systems mindset — balancing 
+              business requirements, user experience, backend architecture, 
+              and long-term maintainability.
             </p>
+          </div>
 
-            <p>
-              Whether you're launching a startup, automating internal
-              operations, or building a full SaaS product, I focus on delivering
-              maintainable, production-ready applications using modern
-              technologies.
-            </p>
+          <div className="about-side">
+            <div className="about-box">
+              <h4>Core Expertise</h4>
+              <ul>
+                <li>Scalable MERN Architecture</li>
+                <li>JWT & Role-Based Authentication</li>
+                <li>Stripe Payment Integration</li>
+                <li>Admin & Analytics Dashboards</li>
+                <li>Cloud Deployment (Vercel / Render)</li>
+              </ul>
+            </div>
 
-            <div className="about-skills">
-              <span>MongoDB</span>
-              <span>Express.js</span>
-              <span>React.js</span>
-              <span>Node.js</span>
-              <span>JWT Auth</span>
-              <span>Stripe</span>
-              <span>Cloudinary</span>
-              <span>REST APIs</span>
+            <div className="about-box">
+              <h4>Development Philosophy</h4>
+              <ul>
+                <li>Security-First Approach</li>
+                <li>Clean & Maintainable Code</li>
+                <li>Business-Focused System Design</li>
+                <li>Production-Ready Deployment</li>
+              </ul>
             </div>
           </div>
+
         </div>
+
       </div>
     </section>
   );

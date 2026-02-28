@@ -1,87 +1,42 @@
 import "./Footer.css";
-import {
-  FaGithub,
-  FaLinkedin,
-  FaBriefcase,
-  FaEnvelope,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="container footer-container">
-        {/* Brand */}
-        <div className="footer-brand">
-          <h3>CodeFlux</h3>
+
+        <div className="footer-left">
+          <h3>Hussain</h3>
           <p>
-            MERN Stack Developer & Management System Specialist building
-            scalable, secure, and modern web applications for businesses.
+            SaaS Systems Engineer building scalable MERN platforms,
+            secure backend architectures, and production-ready applications.
           </p>
 
           <div className="footer-socials">
-            <a
-              href="https://github.com/MirAshique"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub"
-            >
+            <a href="https://github.com/" target="_blank" rel="noreferrer">
               <FaGithub />
             </a>
-
-            <a
-              href="https://www.linkedin.com"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
-            >
+            <a href="https://linkedin.com/" target="_blank" rel="noreferrer">
               <FaLinkedin />
             </a>
-
-            <a
-              href="https://www.fiverr.com"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Fiverr or Upwork"
-            >
-              <FaBriefcase />
-            </a>
-
-            <a
-              href="mailto:ashiqtalpur18@gmail.com"
-              aria-label="Email"
-            >
+            <a href="mailto:ashiqtalpur18@gmail.com">
               <FaEnvelope />
             </a>
           </div>
-
-          <span className="footer-trust">
-            ⏱ Response within 24 hours
-          </span>
         </div>
 
-        {/* Services */}
-        <div className="footer-services">
-          <h4>Services</h4>
-          <ul>
-            <li>Hotel Management Systems</li>
-            <li>Restaurant Management Systems</li>
-            <li>Custom MERN Web Applications</li>
-          </ul>
-        </div>
-
-        {/* Contact */}
-        <div className="footer-contact">
+        <div className="footer-right">
           <h4>Contact</h4>
-          <ul>
-            <li>Email: ashiqtalpur18@gmail.com</li>
-            <li>Available for freelance projects</li>
-            <li>Remote / Worldwide</li>
-          </ul>
+          <p>ashiqtalpur18@gmail.com</p>
+          <p>Available for freelance & SaaS projects</p>
+          <p>Remote • Worldwide</p>
         </div>
+
       </div>
 
       <div className="footer-bottom">
-        © {new Date().getFullYear()} CodeFlux. All rights reserved.
+        © {new Date().getFullYear()} Hussain. All rights reserved.
       </div>
     </footer>
   );

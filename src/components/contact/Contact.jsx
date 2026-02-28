@@ -28,9 +28,7 @@ function Contact() {
     try {
       const response = await fetch(`${API_URL}/api/contact`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)
       });
 
@@ -38,7 +36,7 @@ function Contact() {
 
       if (response.ok && data.success) {
         setStatus({
-          message: "Message sent successfully!",
+          message: "Your message has been sent successfully.",
           type: "success"
         });
 
@@ -49,12 +47,11 @@ function Contact() {
         });
       } else {
         setStatus({
-          message: data.message || "Failed to send message",
+          message: data.message || "Something went wrong.",
           type: "error"
         });
       }
     } catch (error) {
-      console.error("Contact API Error:", error);
       setStatus({
         message: "Server is unreachable. Please try again later.",
         type: "error"
@@ -74,56 +71,65 @@ function Contact() {
   }, [status]);
 
   return (
-    <section className="contact" id="contact" data-aos="fade-up">
+    <section className="contact" id="contact">
       <div className="container contact-container">
-        <h2>Contact Me</h2>
-        <p>
-          Tell me about your project and I’ll get back to you as soon as possible.
-        </p>
+
+        <div className="contact-header">
+          <h2>Let’s Build Something Scalable</h2>
+          <p>
+            Tell me about your project, product idea, or business system — 
+            and I’ll respond within 24 hours.
+          </p>
+        </div>
 
         <form className="contact-form" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
-            disabled={loading}
-            required
-          />
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={formData.email}
-            onChange={handleChange}
-            disabled={loading}
-            required
-          />
+          <div className="form-row">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              value={formData.name}
+              onChange={handleChange}
+              disabled={loading}
+              required
+            />
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              value={formData.email}
+              onChange={handleChange}
+              disabled={loading}
+              required
+            />
+          </div>
 
           <textarea
             name="message"
-            placeholder="Your Message"
-            rows="5"
+            placeholder="Tell me about your project..."
+            rows="6"
             value={formData.message}
             onChange={handleChange}
             disabled={loading}
             required
           ></textarea>
 
-          <button type="submit" className="btn primary" disabled={loading}>
-            {loading ? "Sending..." : "Send Message"}
+          <button type="submit" disabled={loading}>
+            {loading ? "Sending..." : "Start the Conversation"}
           </button>
 
-          {/* ✅ Trust line */}
-          <p className="contact-note">⏱ Response within 24 hours</p>
+          <p className="contact-note">
+            Secure form • Direct response • No spam
+          </p>
 
           {status.message && (
             <p className={`form-status ${status.type}`}>
               {status.message}
             </p>
           )}
+
         </form>
       </div>
     </section>

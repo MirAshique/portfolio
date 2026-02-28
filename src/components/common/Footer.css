@@ -1,93 +1,89 @@
 .footer {
-  background: linear-gradient(135deg, #020617, #0f172a);
-  color: #e5e7eb;
-  padding: 80px 0 30px;
+  background: #0f172a;
+  color: #e2e8f0;
+  padding-top: 80px;
 }
 
-/* Layout */
 .footer-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 50px;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px 60px;
+  flex-wrap: wrap;
 }
 
-/* Brand */
-.footer-brand h3 {
+/* Left */
+
+.footer-left {
+  max-width: 420px;
+}
+
+.footer-left h3 {
   font-size: 1.8rem;
   font-weight: 800;
-  color: #f8fafc;
-  margin-bottom: 12px;
-  letter-spacing: -0.5px;
+  margin-bottom: 16px;
 }
 
-.footer-brand p {
-  font-size: 0.95rem;
+.footer-left p {
+  color: #94a3b8;
   line-height: 1.7;
-  color: #cbd5f5;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 /* Socials */
+
 .footer-socials {
   display: flex;
   gap: 16px;
-  margin-bottom: 18px;
 }
 
 .footer-socials a {
-  font-size: 1.2rem;
-  color: #cbd5f5;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #1e293b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e2e8f0;
+  font-size: 1rem;
   transition: all 0.3s ease;
 }
 
 .footer-socials a:hover {
-  color: #facc15;
+  background: #4f46e5;
   transform: translateY(-3px);
 }
 
-/* Trust line */
-.footer-trust {
-  font-size: 0.85rem;
+/* Right */
+
+.footer-right h4 {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+
+.footer-right p {
   color: #94a3b8;
-}
-
-/* Titles */
-.footer h4 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 14px;
-  color: #f8fafc;
-}
-
-/* Lists */
-.footer ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer ul li {
-  font-size: 0.95rem;
   margin-bottom: 10px;
-  color: #cbd5f5;
 }
 
 /* Bottom */
+
 .footer-bottom {
+  border-top: 1px solid #1e293b;
   text-align: center;
-  margin-top: 60px;
-  font-size: 0.85rem;
-  color: #94a3b8;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 24px;
+  padding: 24px;
+  font-size: 0.9rem;
+  color: #64748b;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .footer {
-    text-align: center;
-  }
 
-  .footer-socials {
-    justify-content: center;
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 40px;
   }
 }

@@ -2,43 +2,66 @@ import "./Hero.css";
 
 function Hero() {
   return (
-    <section
-      className="hero section-gradient"
-      id="home"
-      data-aos="fade-down"
-    >
+    <section className="hero" id="home">
       <div className="container hero-container">
-        <div className="hero-text">
-          <h1>
-            I Build <span className="highlight">Scalable SaaS Platforms</span> 
-            & Business Automation Systems
-          </h1>
+        
+        {/* LEFT CONTENT */}
+        <div className="hero-content">
 
-          <h2>Full Stack MERN Developer</h2>
-
-          <p>
-            From appointment booking platforms and hotel management systems 
-            to full-stack eCommerce applications, I design secure, scalable, 
-            and production-ready MERN solutions built for real-world businesses.
+          <p className="hero-badge">
+            SaaS Systems Engineer • MERN Architect • Stripe Integration
           </p>
 
-          <div className="hero-buttons">
-            <a href="#contact" className="btn primary">
-              Start Your Project
+          <h1 className="hero-title">
+            Building <span>Scalable SaaS Platforms</span> 
+            That Power Modern Businesses
+          </h1>
+
+          <p className="hero-description">
+            I help startups and growing businesses transform ideas into 
+            secure, production-ready web applications — from booking systems 
+            to full-scale SaaS eCommerce platforms with authentication, 
+            analytics, and cloud deployment.
+          </p>
+
+          <div className="hero-actions">
+            <a href="#projects" className="btn-primary">
+              View Case Studies
             </a>
-            <a href="#projects" className="btn secondary">
-              View Live Systems
+            <a href="#contact" className="btn-outline">
+              Start a Project
             </a>
+          </div>
+
+          {/* TRUST INDICATORS */}
+          <div className="hero-trust">
+            <div>
+              <strong>3+</strong>
+              <span>Production Systems</span>
+            </div>
+            <div>
+              <strong>JWT</strong>
+              <span>Secure Auth</span>
+            </div>
+            <div>
+              <strong>Stripe</strong>
+              <span>Payment Integration</span>
+            </div>
+            <div>
+              <strong>Cloud</strong>
+              <span>Deployed Apps</span>
+            </div>
           </div>
         </div>
 
-        <div className="hero-image-wrapper">
+        {/* RIGHT IMAGE */}
+        <div className="hero-visual">
           <img
             src="https://res.cloudinary.com/doihfukwc/image/upload/v1771004235/ChatGPT_Image_Feb_13_2026_10_34_40_PM_nlvqgt.png"
-            alt="Full Stack SaaS Dashboard Preview"
-            className="hero-image"
+            alt="SaaS Dashboard Preview"
           />
         </div>
+
       </div>
     </section>
   );

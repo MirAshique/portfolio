@@ -1,20 +1,60 @@
 :root {
-  /* Colors */
-  --primary-color: #2563eb;
-  --secondary-color: #0f172a;
-  --text-color: #334155;
-  --light-text: #64748b;
-  --background-color: #f8fafc;
-  --white-color: #ffffff;
+  /* =========================
+     BRAND COLORS
+  ========================== */
 
-  /* Fonts */
-  --font-family: 'Inter', system-ui, Arial, sans-serif;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
 
-  /* Spacing */
-  --section-padding: 80px;
-  --container-width: 1200px;
+  --text-dark: #0f172a;
+  --text-body: #475569;
+  --text-light: #64748b;
 
-  /* Effects */
-  --border-radius: 8px;
+  --bg-main: #f8fafc;
+  --bg-white: #ffffff;
+  --bg-dark: #0f172a;
+
+  --border-light: #e2e8f0;
+
+  /* =========================
+     TYPOGRAPHY
+  ========================== */
+
+  --font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --fs-hero: clamp(2.5rem, 5vw, 3.5rem);
+  --fs-h2: clamp(1.8rem, 3vw, 2.4rem);
+  --fs-h3: 1.3rem;
+  --fs-body: 1rem;
+  --fs-small: 0.9rem;
+
+  /* =========================
+     SPACING SYSTEM
+  ========================== */
+
+  --section-padding: 120px;
+  --container-width: 1180px;
+  --container-padding: 24px;
+
+  /* =========================
+     RADIUS
+  ========================== */
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+
+  /* =========================
+     SHADOW SYSTEM (SOFT)
+  ========================== */
+
+  --shadow-sm: 0 5px 15px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 15px 35px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 25px 60px rgba(15, 23, 42, 0.12);
+
+  /* =========================
+     TRANSITIONS
+  ========================== */
+
   --transition: all 0.3s ease;
 }

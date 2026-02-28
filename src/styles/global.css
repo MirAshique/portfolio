@@ -1,40 +1,168 @@
 @import "./variables.css";
 
-/* CSS Reset */
-* {
+/* =========================
+   RESET
+========================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-/* Global Styles */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-family);
-  background-color: var(--background-color);
-  color: var(--text-color);
-  line-height: 1.6;
+  background: var(--bg-main);
+  color: var(--text-body);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
+
+/* =========================
+   TYPOGRAPHY SYSTEM
+========================= */
+
+h1, h2, h3, h4 {
+  color: var(--text-dark);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var(--fs-hero);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: var(--fs-h3);
+}
+
+p {
+  font-size: var(--fs-body);
+  color: var(--text-body);
+}
+
+small {
+  font-size: var(--fs-small);
+}
+
+/* =========================
+   LINKS
+========================= */
 
 a {
   text-decoration: none;
   color: inherit;
+  transition: var(--transition);
 }
 
-ul {
-  list-style: none;
-}
+/* =========================
+   IMAGES
+========================= */
 
 img {
   max-width: 100%;
   display: block;
 }
 
-/* Utility Container */
+/* =========================
+   CONTAINER
+========================= */
+
 .container {
   max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 var(--container-padding);
 }
-html {
-  scroll-behavior: smooth;
+
+/* =========================
+   SECTION SYSTEM
+========================= */
+
+section {
+  padding: var(--section-padding) 0;
+  position: relative;
+}
+
+/* Optional subtle divider */
+section:not(:first-of-type)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 60px;
+  height: 2px;
+  background: var(--border-light);
+  transform: translateX(-50%);
+}
+
+/* =========================
+   BUTTON SYSTEM (GLOBAL)
+========================= */
+
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* =========================
+   CARD SYSTEM
+========================= */
+
+.card {
+  background: var(--bg-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  section {
+    padding: 90px 0;
+  }
 }
